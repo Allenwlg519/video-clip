@@ -104,3 +104,7 @@ video-clip/
 ## 许可证
 
 MIT License
+
+---
+
+*Powered by FFmpeg* 🎥
