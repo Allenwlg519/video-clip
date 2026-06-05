@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Video clipper edit plan",
+  "type": "object",
+  "required": ["source", "clips"],
+  "properties": {
+    "source": {
+      "type": "string",
+      "description": "Path to the source video."
+    },
+    "project": {
+      "type": "string",
+      "description": "Short project name used for output naming."
+    },
+    "clips": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "start", "end"],
+        "properties": {
+          "id": {"type": "string", "examples": ["clip_01"]},
+          "start": {"type": "number", "description": "Start time in seconds."},
+          "end": {"type": "number", "description": "End time in seconds."},
+          "title": {"type": "string"},
+          "description": {"type": "string"},
+          "hook": {"type": "string"},
+          "score": {"type": "number", "minimum": 0, "maximum": 1}
+        }
+      }
+    },
+    "shorts": {
+      "type": "array",
+      "description": "Optional assemblies made from clips.",
+      "items": {
+        "type": "object",
+        "required": ["id", "clips"],
+        "properties": {
+          "id": {"type": "string", "examples": ["short_01"]},
+          "title": {"type": "string"},
+          "clips": {"type": "array", "items": {"type": "string"}},
+          "platform": {"type": "string"},
+          "aspect": {"type": "string", "examples": ["9:16", "1:1", "16:9"]}
+        }
+      }
+    }
+  }
+}

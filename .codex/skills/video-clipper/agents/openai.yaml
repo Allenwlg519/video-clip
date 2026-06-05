@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Clipper"
+  short_description: "Analyze, plan, cut, subtitle, and export short videos."
+  default_prompt: "Use $video-clipper to analyze a source video and create a polished short-video edit plan with executable clip commands."
